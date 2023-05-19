@@ -1,2 +1,17 @@
-// Placeholder to allow defining custom styles that override everything else.
-// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+:lang(zh) {
+p:not([class]){
+  white-space: pre-line;
+}
+blockquote {
+  font-style: normal;
+}
+}
+
+/*https://github.com/jekyll/minima/blob/41b97699af658128fa9983e5312ca5516641f335/_sass/minima/_base.scss#L254*/
+table{width:revert;
+  /*https://github.com/jekyll/minima/blob/41b97699af658128fa9983e5312ca5516641f335/_sass/minima/_base.scss#L276*/
+  display:revert
+}
+h4,h5,h6{font-weight:revert}
+.post-content{h1,h2,h3,h4,h5,h6{font-size:revert}}
+@media screen and (min-width: 800px){.post-content h1{font-size:revert}}
