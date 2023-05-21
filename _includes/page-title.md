@@ -3,4 +3,4 @@
   {{page.categories.last}}：
 {%-endunless-%}
 
-{{page.title}}
+{{page.slug}}
