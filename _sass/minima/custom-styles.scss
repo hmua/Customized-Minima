@@ -28,12 +28,9 @@ rt{font-size:smaller}
 @import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
 
 body{font-family:Smiley Sans,SmileySans-Oblique}
-p:not(.post-meta),table{font-family:Microsoft YaHei UI}
+p:not([class]),:not([class])>li,table{font-family:Microsoft YaHei UI}
 /*文章顶端网站标题缩小*/.site-header:has(+main>div>article) .site-title{font-size:revert;color:grey}
 h1,h2,h3,h4,h5,h6{font-weight:normal}
-
-:not([class])>li,
-p:not([class]) {font-family:Microsoft YaHei UI}
 
 :not([class])>li{white-space:pre-line}
 :not([class])>li>*{white-space:initial}
