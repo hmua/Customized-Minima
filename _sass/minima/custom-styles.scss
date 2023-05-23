@@ -10,7 +10,6 @@ h4,h5,h6{font-weight:revert}
 blockquote{color:DimGray}
 rt{font-size:smaller}
 
-:lang(zh) {
 /*缩小 中文中间的英文
 早先想到简单的方式，就是英文用Calibri——Calibri、Corbel、Gill Sans字体都比较矮
 之后发现更恰当的方法，是通过“font-face”的“unicode-range”调整
@@ -36,6 +35,7 @@ em不准也能加入calc来修正，但会多很多影响语义，可以避免�
 
 @font-face{font-family:Gill Sans Nova;src:local(Gill Sans Nova);size-adjust:112%}
 
+:lang(zh) {
 :root{
 	--capital:Gill Sans Nova,Microsoft YaHei;
 	--paragraph:Segoe UI;--zh-CN:Microsoft YaHei;
