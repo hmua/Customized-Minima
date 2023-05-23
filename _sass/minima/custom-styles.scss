@@ -1,15 +1,3 @@
-:lang(zh) {
-p:not([class]){
-  white-space: pre-line;
-}
-blockquote {
-  font-style: normal;
-}
-}
-
-blockquote{color:DimGray}
-rt{font-size:smaller}
-
 /*https://github.com/jekyll/minima/blob/41b97699af658128fa9983e5312ca5516641f335/_sass/minima/_base.scss#L254*/
 table{width:revert;
   /*https://github.com/jekyll/minima/blob/41b97699af658128fa9983e5312ca5516641f335/_sass/minima/_base.scss#L276*/
@@ -18,3 +6,46 @@ table{width:revert;
 h4,h5,h6{font-weight:revert}
 .post-content{h1,h2,h3,h4,h5,h6{font-size:revert}}
 @media screen and (min-width: 800px){.post-content h1{font-size:revert}}
+
+blockquote{color:DimGray}
+rt{font-size:smaller}
+
+:lang(zh) {
+/*缩小 中文中间的英文
+早先想到简单的方式，就是英文用Calibri——Calibri、Corbel、Gill Sans字体都比较矮
+之后发现更恰当的方法，是通过“font-face”的“unicode-range”调整
+又分两种：一是调小英文字符，二是调大中文字符
+
+之前采用调大中文，这样会兼得缩小间距效果（实际很微小），
+但会带来一个麻烦的问题：em会不准，
+现在主要是需要划底格时，格子要正好划在十个字等地方，
+em不准也能加入calc来修正，但会多很多影响语义，可以避免的代码，
+因此改成缩小英文的方式。
+
+- 伪BUG：Windows Chrome中调整size-adjust经常无效，只要关闭再恢复标签即解决
+- 注意：似乎@fant-face中不支持var，size-adjust必须手动维护*/
+@font-face{font-family:Microsoft YaHei;src:local(Microsoft YaHei)}
+/*@font-face{font-family:Microsoft YaHei;src:local(Microsoft YaHei);
+	size-adjust:112%;unicode-range:u+4E00-9FA5,u+f900-fa2d}*/
+@font-face{font-family:Microsoft YaHei;src:local(Microsoft YaHei);
+	size-adjust:90%;unicode-range:U+20-7E}
+
+@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI)}
+@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);
+	size-adjust:90%;unicode-range:U+20-7E}
+
+@font-face{font-family:Gill Sans Nova;src:local(Gill Sans Nova);size-adjust:112%}
+
+:root{
+	--capital:Gill Sans Nova,Microsoft YaHei;
+	--paragraph:Segoe UI;--zh-CN:Microsoft YaHei;
+	--p-width:85vw;---char-per-line:35;
+	--p-font-size:calc(100cqw/var(---char-per-line))}
+  
+p:not([class]){
+  white-space: pre-line;
+}
+blockquote {
+  font-style: normal;
+}
+}
