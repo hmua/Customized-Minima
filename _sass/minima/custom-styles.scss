@@ -11,7 +11,11 @@ h4,h5,h6{font-weight:revert}
 @font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);
 	size-adjust:90%;unicode-range:U+20-7E}
 
+/*得意黑网络字体（以下两个不是同一个源）
+https://voderl.cn/js/对中文字体进行切片/
+https://github.com/wc-ex/cn-fontsource*/
 @import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
+/*针对Android Firefox中网络字体，现在由于手机上Firefox版本不能更新，旧版不支持，无法完成测试也无法使用*/
 @font-face {
   font-family: SmileySans-Oblique;
   src: url("https://voderl.cn/fonts/SmileySans-Oblique/SmileySans-Oblique.95.woff2") format("woff2");
