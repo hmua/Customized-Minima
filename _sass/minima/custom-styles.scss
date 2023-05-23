@@ -8,8 +8,7 @@ h4,h5,h6{font-weight:revert}
 @media screen and (min-width: 800px){.post-content h1{font-size:revert}}
 
 @font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI)}
-@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);
-	size-adjust:90%;unicode-range:U+20-7E}
+@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);size-adjust:90%;unicode-range:U+20-7E}
 
 /*得意黑网络字体（以下两个不是同一个源）
 https://voderl.cn/js/对中文字体进行切片/
@@ -22,10 +21,9 @@ https://github.com/wc-ex/cn-fontsource*/
     size-adjust:95%;unicode-range:U+20-22,U+27-2a,U+2c-3b,U+3f,U+41-4d,U+4f-5d,U+61-7b,U+7d}
 
 @font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique)}
-@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);
-	size-adjust:95%;unicode-range:U+20-7E}
+@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);size-adjust:95%;unicode-range:U+20-7E}
 
-:lang(zh) {
+:lang(zh-Hans){
 	blockquote{font-style:revert}
 	
 	body{font-family:Smiley Sans,SmileySans-Oblique}
