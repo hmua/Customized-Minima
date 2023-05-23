@@ -23,7 +23,6 @@ rt{font-size:smaller}
 @font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);
 	size-adjust:95%;unicode-range:U+20-7E}
 
-
 :lang(zh) {
 
 @import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
@@ -34,7 +33,7 @@ p:not(.post-meta),table{font-family:Microsoft YaHei UI}
 h1,h2,h3,h4,h5,h6{font-weight:normal}
 
 :not([class])>li,
-:lang(zh) p:not([class]) {font-family:Microsoft YaHei UI}
+p:not([class]) {font-family:Microsoft YaHei UI}
 
 :not([class])>li{white-space:pre-line}
 :not([class])>li>*{white-space:initial}
