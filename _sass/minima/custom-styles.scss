@@ -14,11 +14,6 @@ rt{font-size:smaller}
 @font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);
 	size-adjust:90%;unicode-range:U+20-7E}
 
-
-:lang(zh) {
-
-@import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
-  
 @font-face {
   font-family: SmileySans-Oblique;
   src: url("https://voderl.cn/fonts/SmileySans-Oblique/SmileySans-Oblique.95.woff2") format("woff2");
@@ -27,6 +22,11 @@ rt{font-size:smaller}
 @font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique)}
 @font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);
 	size-adjust:95%;unicode-range:U+20-7E}
+
+
+:lang(zh) {
+
+@import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
   
 p:not([class]){
   white-space: pre-line;
