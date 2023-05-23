@@ -7,13 +7,11 @@ h4,h5,h6{font-weight:revert}
 .post-content{h1,h2,h3,h4,h5,h6{font-size:revert}}
 @media screen and (min-width: 800px){.post-content h1{font-size:revert}}
 
-blockquote{color:DimGray}
-rt{font-size:smaller}
-
 @font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI)}
 @font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);
 	size-adjust:90%;unicode-range:U+20-7E}
 
+@import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
 @font-face {
   font-family: SmileySans-Oblique;
   src: url("https://voderl.cn/fonts/SmileySans-Oblique/SmileySans-Oblique.95.woff2") format("woff2");
@@ -24,38 +22,34 @@ rt{font-size:smaller}
 	size-adjust:95%;unicode-range:U+20-7E}
 
 :lang(zh) {
+	blockquote{font-style:revert}
+	
+	body{font-family:Smiley Sans,SmileySans-Oblique}
+	p:not([class]),:not([class])>li,table{font-family:Microsoft YaHei UI}
+	h1,h2,h3,h4,h5,h6{font-weight:normal}
 
-@import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
+	/*文章顶端网站标题缩小*/.site-header:has(+main>div>article) .site-title{font-size:revert;color:grey}
 
-body{font-family:Smiley Sans,SmileySans-Oblique}
-p:not([class]),:not([class])>li,table{font-family:Microsoft YaHei UI}
-/*文章顶端网站标题缩小*/.site-header:has(+main>div>article) .site-title{font-size:revert;color:grey}
-h1,h2,h3,h4,h5,h6{font-weight:normal}
+	p:not([class]){white-space: pre-line}
 
-:not([class])>li{white-space:pre-line}
-:not([class])>li>*{white-space:initial}
+	:not([class])>li{white-space:pre-line}
+	:not([class])>li>*{white-space:initial}
 
-/*修正：中文中，斜体部分右侧普遍压角；
-取消：下一条降低了倾斜角度，之后没有压角问题了。
-倾斜后文字会变宽，默认的italic是左边缘固定，向右移动，后面的文字又不会自动后移；
-skewX则是中心固定。*/
-/*:lang(zh) em{margin-right:.1em}*/
+	/*修正：中文中，斜体部分右侧普遍压角；
+	取消：下一条降低了倾斜角度，之后没有压角问题了。
+	倾斜后文字会变宽，默认的italic是左边缘固定，向右移动，后面的文字又不会自动后移；
+	skewX则是中心固定。*/
+	/*em{margin-right:.1em}*/
 
-/*中文斜体_的默认角度_，三五个斜体字还是可以，集中超过十个准没法看，
-微软雅黑和得意黑的斜体都没法看。
-把倾斜角度调小一点，标准语法是“font-style:oblique -10deg”，但Chrome没实现此语法；
-用“transform:skewX()”，加“display:inline-block”也可以实现。
-经测试，倾斜角10°以内比较美观。*/
-:lang(zh) em{font-style:normal;transform:skewX(-7deg);display:inline-block}
+	/*中文斜体_的默认角度_，三五个斜体字还是可以，集中超过十个准没法看，
+	微软雅黑和得意黑的斜体都没法看。
+	把倾斜角度调小一点，标准语法是“font-style:oblique -10deg”，但Chrome没实现此语法；
+	用“transform:skewX()”，加“display:inline-block”也可以实现。
+	经测试，倾斜角10°以内比较美观。*/
+	em{font-style:normal;transform:skewX(-7deg);display:inline-block}
 
-:lang(zh) em{color:gray}
-:lang(zh) :is(p,li) b{font-weight:600}
-h3{color:dimgray}
-  
-p:not([class]){
-  white-space: pre-line;
-}
-blockquote {
-  font-style: normal;
-}
+	:is(p,li) b{font-weight:600}
+	h3,blockquote{color:dimgray}
+	em{color:gray}
+	rt{font-size:smaller}
 }
