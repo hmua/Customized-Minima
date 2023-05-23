@@ -19,11 +19,14 @@ rt{font-size:smaller}
 
 @import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
   
-:root{
-	--capital:Gill Sans Nova,Microsoft YaHei;
-	--paragraph:Segoe UI;--zh-CN:Microsoft YaHei;
-	--p-width:85vw;---char-per-line:35;
-	--p-font-size:calc(100cqw/var(---char-per-line))}
+@font-face {
+  font-family: SmileySans-Oblique;
+  src: url("https://voderl.cn/fonts/SmileySans-Oblique/SmileySans-Oblique.95.woff2") format("woff2");
+    size-adjust:95%;unicode-range:U+20-22,U+27-2a,U+2c-3b,U+3f,U+41-4d,U+4f-5d,U+61-7b,U+7d}
+
+@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique)}
+@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);
+	size-adjust:95%;unicode-range:U+20-7E}
   
 p:not([class]){
   white-space: pre-line;
