@@ -33,7 +33,7 @@ layout: base
           </a>
         </h3>
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          <blockquote>{{ post.excerpt }}</blockquote>
         {%- endif -%}
       </li>
       {%- endfor -%}
