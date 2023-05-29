@@ -2,8 +2,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {::comment}fix Jekyll bug: title case error{/:}
-  {%-if page.slug%}<title>{{page.slug}}</title>{%endif%}
+  <!--fix Jekyll bug: title case error-->
+  {%-if page.slug%}<title>{{page.slug}} | {{site.title}}</title>{%endif%}
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   {%-comment%}Feed is Removed{%endcomment%}
