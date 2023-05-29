@@ -4,7 +4,7 @@ table{width:revert;
   display:revert
 }
 h4,h5,h6{font-weight:revert}
-.post-content{h1,h2,h3,h4,h5,h6{font-size:revert}}
+.post-content>:is(h1,h2,h3,h4,h5,h6){font-size:revert}
 body{background: revert}
 @media screen and (min-width: 800px){.post-content h1{font-size:revert}}
 
