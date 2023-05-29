@@ -2,7 +2,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%-if post.slug%}<title>{{post.slug}}</title>{%endif%}
+  {%-if post.slug%}
+    <title>{{post.slug}}</title>{%endif%}
+  {%-elsif post%}
+    <title>post</title>
+  {%-elsif page%}
+    <title>page</title>
+  {%-else%}
+    <title>none</title>
+  {%endif%}
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   {%-comment%}Feed is Removed{%endcomment%}
