@@ -9,6 +9,12 @@ body{background: revert}
 @media screen and (min-width: 800px){.post-content h1{font-size:revert}}
 
 
+/*得意黑比雅黑小太多
+size-adjust:150时，宽度和雅黑一致，
+字体尺寸应该是按高度，换算得意黑宽度是三分之二。
+但设置成150%太大了，还需再细调，暂时不做调整。*/
+@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique)}
+@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);size-adjust:95%;unicode-range:U+20-7E}
 /*得意黑网络字体（以下两个不是同一个源）
 https://voderl.cn/js/对中文字体进行切片/
 https://github.com/wc-ex/cn-fontsource*/
@@ -18,8 +24,6 @@ https://github.com/wc-ex/cn-fontsource*/
   font-family: SmileySans-Oblique;
   src: url("https://voderl.cn/fonts/SmileySans-Oblique/SmileySans-Oblique.95.woff2") format("woff2");
     size-adjust:95%;unicode-range:U+20-22,U+27-2a,U+2c-3b,U+3f,U+41-4d,U+4f-5d,U+61-7b,U+7d}
-@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique)}
-@font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);size-adjust:95%;unicode-range:U+20-7E}
 :lang(zh-Hans) body{font-family:Smiley Sans,SmileySans-Oblique}
 
 
