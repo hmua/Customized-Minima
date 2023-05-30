@@ -49,8 +49,8 @@ skewX则是中心固定。*/
 微软雅黑和得意黑的斜体都没法看。
 把倾斜角度调小一点，标准语法是“font-style:oblique -10deg”，但Chrome没实现此语法；
 用“transform:skewX()”，加“display:inline-block”也可以实现。
-经测试，倾斜角10°以内比较美观。*/
-em{font-style:normal;transform:skewX(-7deg);display:inline-block}
+Consolas等一些字体有专门的斜体写法，保留斜体写法，再将倾斜度向回调一点。*/
+em{transform:skewX(7deg);display:inline-block}
 
 :is(p,li) b{font-weight:600}
 blockquote{color:dimgray}
