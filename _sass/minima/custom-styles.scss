@@ -9,17 +9,37 @@ body{background: revert}
 @media screen and (min-width: 800px){.post-content h1{font-size:revert}}
 
 
-/*得意黑比雅黑小太多
-size-adjust:150时，宽度和雅黑一致，
+/*文章顶端网站标题缩小*/
+.site-header:has(+main>div>article) .site-title{font-size:revert;color:grey}
+/*过粗字体不适宜高分辨率趋势*/
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+:is(p,li) b{font-weight:600}
+
+
+/*以下内容都对中文优化*/
+blockquote{font-style:revert}
+
+
+/*正文字体：雅黑*/
+@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI)}
+@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);size-adjust:90%;unicode-range:U+20-7E}
+:lang(zh-Hans) p:not([class]),
+:lang(zh-Hans) :not([class])>li,
+:lang(zh-Hans) table{font-family:Microsoft YaHei UI}
+
+
+/*界面、标题字体：得意黑*/
+/*得意黑比雅黑小太多，size-adjust:150时，宽度和雅黑一致，
 字体尺寸应该是按高度，换算得意黑宽度是三分之二。
 但设置成150%太大了，还需再细调，暂时不做调整。*/
 @font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique)}
 @font-face{font-family:Smiley Sans;src:local(Smiley Sans Oblique);size-adjust:95%;unicode-range:U+20-7E}
+
 /*得意黑网络字体（以下两个不是同一个源）
-https://voderl.cn/js/对中文字体进行切片/
-https://github.com/wc-ex/cn-fontsource*/
+- https://voderl.cn/js/对中文字体进行切片/
+- https://github.com/wc-ex/cn-fontsource*/
 @import url("https://voderl.cn/fonts/SmileySans-Oblique/font.css");
-/*针对Android Firefox中网络字体，现在由于手机上Firefox版本不能更新，旧版不支持，无法完成测试也无法使用*/
+/*缩小英文，Android Firefox版本较旧，暂时不便更新，旧版不支持，无法完成测试使用*/
 @font-face {
   font-family: SmileySans-Oblique;
   src: url("https://voderl.cn/fonts/SmileySans-Oblique/SmileySans-Oblique.95.woff2") format("woff2");
@@ -27,21 +47,12 @@ https://github.com/wc-ex/cn-fontsource*/
 :lang(zh-Hans) body{font-family:Smiley Sans,SmileySans-Oblique}
 
 
-@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI)}
-@font-face{font-family:Microsoft YaHei UI;src:local(Microsoft YaHei UI);size-adjust:90%;unicode-range:U+20-7E}
-:lang(zh-Hans) p:not([class]),:not([class])>li,table{font-family:Microsoft YaHei UI}
-
-
-/*以下内容都对中文优化*/
-blockquote{font-style:revert}
-h1,h2,h3,h4,h5,h6{font-weight:normal}
-
-/*文章顶端网站标题缩小*/.site-header:has(+main>div>article) .site-title{font-size:revert;color:grey}
-
+/*中文按语义换行——https://github.com/hmua/hmua.github.io/blob/main/建站/Jekyll/_posts/23-5-22-硬换行.md*/
 p:not([class]){white-space: pre-line}
 
 :not([class])>li{white-space:pre-line}
 :not([class])>li>*{white-space:initial}
+
 
 /*修正：中文中，斜体部分右侧普遍压角；
 取消：下一条降低了倾斜角度，之后没有压角问题了。
@@ -52,10 +63,9 @@ skewX则是中心固定。*/
 /*中文斜体_的默认角度_，三五个斜体字还是可以，集中超过十个准没法看，
 微软雅黑和得意黑的斜体都没法看。
 把倾斜角度调小一点，标准语法是“font-style:oblique -10deg”，但Chrome没实现此语法；
-用“transform:skewX()”，加“display:inline-block”也可以实现。
+用“transform:skewX()”加“display:inline-block”也可以实现。
 Consolas等一些字体有专门的斜体写法，保留斜体写法，再将倾斜度向回调一点。*/
 em{transform:skewX(7deg);display:inline-block}
 
-:is(p,li) b{font-weight:600}
 blockquote{color:dimgray}
 rt{font-size:smaller}
