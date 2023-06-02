@@ -54,18 +54,21 @@ p:not([class]){white-space: pre-line}
 :not([class])>li>*{white-space:initial}
 
 
+/*斜体的两个修正。只选用一个*/
 /*修正：中文中，斜体部分右侧普遍压角；
 取消：下一条降低了倾斜角度，之后没有压角问题了。
 倾斜后文字会变宽，默认的italic是左边缘固定，向右移动，后面的文字又不会自动后移；
 skewX则是中心固定。*/
-/*em{margin-right:.1em}*/
+em{margin-right:.1em}
 
-/*中文斜体_的默认角度_，三五个斜体字还是可以，集中超过十个准没法看，
+/*中文斜体*的默认角度*，三五个斜体字还是可以，集中超过十个准没法看，
 微软雅黑和得意黑的斜体都没法看。
 把倾斜角度调小一点，标准语法是“font-style:oblique -10deg”，但Chrome没实现此语法；
 用“transform:skewX()”加“display:inline-block”也可以实现。
 Consolas等一些字体有专门的斜体写法，保留斜体写法，再将倾斜度向回调一点。*/
-em{transform:skewX(7deg);display:inline-block}
+/*用了一段时间显示效果是理想的，问题出在有时有长的斜体段落，维护起来有点麻烦。
+暂时停用，以后再调整。注意不用长段斜体，用默认斜体也可以。
+em{transform:skewX(7deg);display:inline-block}*/
 
 blockquote{color:dimgray}
 rt{font-size:smaller}
