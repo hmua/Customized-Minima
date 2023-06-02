@@ -66,8 +66,8 @@ em{margin-right:.1em}
 把倾斜角度调小一点，标准语法是“font-style:oblique -10deg”，但Chrome没实现此语法；
 用“transform:skewX()”加“display:inline-block”也可以实现。
 Consolas等一些字体有专门的斜体写法，保留斜体写法，再将倾斜度向回调一点。*/
-/*用了一段时间显示效果是理想的，问题出在有时有长的斜体段落，维护起来有点麻烦。
-暂时停用，以后再调整。注意不用长段斜体，用默认斜体也可以。
+/*用了一段时间，显示效果是理想的，问题出在有时有长的斜体段落，维护起来有点麻烦。
+暂时停用，以后再调整。注意不用长段斜体，感觉，用默认斜体也可以。
 em{transform:skewX(7deg);display:inline-block}*/
 
 blockquote{color:dimgray}
