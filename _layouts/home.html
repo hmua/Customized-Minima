@@ -28,7 +28,8 @@ layout: base
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
-            {%include slug.md-%}            
+          {%-assign page=post%}{%include page-title.md-%}
+            
           </a>
         </h3>
         {%- if site.show_excerpts -%}
