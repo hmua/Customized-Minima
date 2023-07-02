@@ -1,7 +1,6 @@
 {%comment%}如果有CATEGORY 显示在标题前{%endcomment-%}
-{%unless post.slug contains '：' or post.categories.size<=1
-  or post.slug contains post.categories.last%}
-  {{-post.categories.last-}}：
-{%endunless%}
+{%assign slug=post.slug%}{%assign category=post.categories.last%}
+{%unless slug contains '：' or category==nil or slug contains category-%}
+  {{category}}：{%endunless-%}
 
-{{-post.slug-}}
+{{slug-}}
