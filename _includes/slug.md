@@ -3,10 +3,11 @@
 
 {%if slug contains'：'%}slug contains'：', {%endif-%}
 {%if categories.size<=1%}categories.size<=1, {%endif-%}
-{%if slug contains categories.last%}slug contains categories.last{%endif-%}
+{%if slug contains categories.last%}slug contains categories.last, {%endif-%}
   
 {%capture category-%}
-{%unless slug contains'：'or categories.size<=1
-  or slug contains categories.last-%}
+{%unless slug contains '：'
+  or categories.size <= 1
+  or slug contains categories.last -%}
   {{categories.last}}{%endunless%}{%endcapture-%}
 {{category}}{%if category!=''and slug!=''%}：{%endif%}{{slug-}}
