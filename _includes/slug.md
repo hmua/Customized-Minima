@@ -6,7 +6,7 @@
 {%if slug contains categories.last%}slug contains categories.last, {%endif-%}
   
 {%capture category-%}
-{%unless slug contains'：'or categories.size <= 1
+{%unless slug contains'：' or categories.size <= 1
   or slug contains categories.last -%}
   {{categories.last}}{%endunless%}{%endcapture-%}
 {{category}}{%if category!=''and slug!=''%}：{%endif%}{{slug-}}
