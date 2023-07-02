@@ -21,7 +21,7 @@
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%assign a=my_page.name|split:'.'-%}
-            {%if a.last=='md'-%}
+            {%if a.last=='md'and a.first!='README'-%}
             <a class="page-link" href="{{ my_page.url | relative_url }}">{{a|first | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
